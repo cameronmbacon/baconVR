@@ -4,19 +4,20 @@
   "description": "Back End for baconVR application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cameronmbacon/baconVR-back.git"
   },
-  "keywords": [
-    "Node"
-  ],
+  "keywords": ["Node"],
   "author": "Cameron Bacon",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cameronmbacon/baconVR-back/issues"
   },
-  "homepage": "https://github.com/cameronmbacon/baconVR-back#readme"
+  "homepage": "https://github.com/cameronmbacon/baconVR-back#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }
