@@ -55,7 +55,10 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+.env*
 
 # Coveralls file
 .coveralls.yml
+
+# DS_Store files
+.DS_Store
