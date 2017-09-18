@@ -3,7 +3,7 @@
 const request = require('supertest');
 const chai = require('chai');
 const expect = chai.expect;
-const app = require('../server').app;
+const app = require('../index').app;
 
 describe('Server', () => {
   describe('#GET /', () => {
