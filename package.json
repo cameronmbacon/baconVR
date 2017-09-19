@@ -12,7 +12,7 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix server/client",
     "heroku-postbuild":
-      "NPM_CONFIG_PRODUCTION=false npm install --prefix server/client && npm run build --prefix client",
+      "NPM_CONFIG_PRODUCTION=false npm install --prefix server/client && npm run build --prefix server/client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
