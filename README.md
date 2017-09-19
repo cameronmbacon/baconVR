@@ -1,2 +1,2 @@
 # baconVR | [![Build Status](https://travis-ci.org/cameronmbacon/baconVR-back.svg?branch=master)](https://travis-ci.org/cameronmbacon/baconVR-back) [![Coverage Status](https://coveralls.io/repos/github/cameronmbacon/baconVR-back/badge.svg?branch=master)](https://coveralls.io/github/cameronmbacon/baconVR-back?branch=master)
-This project serves as the Back End of the baconVR project, which is my introductory application for the MERN stack. 
+This project serves as my introductory application for the MERN stack. 
