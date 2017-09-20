@@ -1,5 +1,5 @@
 const Promise = require('bluebird');
-const User = require('../../server/models/User');
+const User = require('../../models/User');
 
 module.exports = done => {
   Promise.all([User.remove({})])
