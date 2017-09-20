@@ -1,18 +1,20 @@
-'use strict';
-
-require('dotenv').config();
+require('dotenv').load();
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-require('./server/models/User');
-require('./server/services/passport');
+require('./models/User');
+require('./models/Survey');
+require('./services/passport');
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(
   cookieSession({
@@ -20,19 +22,19 @@ app.use(
     keys: [process.env.COOKIE_KEY]
   })
 );
-
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./server/routes/authRoutes')(app);
-require('./server/routes/billingRoutes')(app);
+require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('server/client/build'));
+  app.use(express.static('client/build'));
 
   const path = require('path');
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'server', 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 

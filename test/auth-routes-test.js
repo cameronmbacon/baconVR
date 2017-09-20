@@ -7,7 +7,7 @@ const Promise = require('bluebird');
 const serverCtrl = require('./lib/server-ctrl');
 const cleanDB = require('./lib/clean-db');
 const server = require('../index');
-const User = require('../server/models/User');
+const User = require('../models/User');
 
 mongoose.Promise = Promise;
 
