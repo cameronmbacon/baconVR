@@ -18,6 +18,6 @@ branches:
   only:
     - staging
 before_script: npm i
-after_success: 'npm run coveralls'
+after_success: 'npm run coverage'
 script:
   - npm run test
